@@ -1,0 +1,459 @@
+/* cose necessarie
+font-family: 'Poppins', sans-serif;
+background-color: rgb(27, 71, 5); 
+----------------------*/
+
+
+
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+/* regole generiche */
+
+html {
+    background-color: rgb(236, 233, 230);
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    padding: 2%;
+}
+
+
+
+/* regole header */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 80px;
+    background: rgb(157, 100, 105);
+    background: linear-gradient(45deg, rgba(157, 100, 105, 1) 0%, rgba(88, 11, 30, 1) 100%);
+    border-radius: 0 0 12px 12px;
+    z-index: 1;
+}
+
+.header-title {
+    color: #ffffff;
+    padding: 16px;
+    cursor: default;
+}
+
+.header-menu {
+    height: 80px;
+    width: 80px;
+    border-radius: 0px 0px 12px 12px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+}
+
+.header-menu svg {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20%;
+}
+
+svg:hover {
+    cursor: pointer;
+}
+
+
+
+/* regole calendario */
+
+.container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+}
+
+.wrapper {
+    width: 100%;
+    background-color: rgb(222, 213, 203);
+    border-radius: 12px;
+    padding: 2%;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-wrapper-left {
+    display: flex;
+    align-items: center;
+    font-size: 1.45rem;
+    font-weight: 600;
+    padding: 0 30px 0;
+}
+
+.current-date {
+    cursor: default;
+}
+
+.icons {
+    margin-left: 7px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icons:hover {
+    background-color: #ffffff;
+}
+
+.material-symbols-rounded {
+    color: #878787;
+    font-size: 1.9rem;
+    margin: 0 3px;
+    text-align: center;
+    line-height: 38px;
+}
+
+.today {
+    font-size: 1.3rem;
+    color: #878787;
+    padding-right: 30px;
+    cursor: default;
+}
+
+.calendar {
+    padding: 20px
+}
+
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+    cursor: default;
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+}
+
+.calendar .days {
+    margin-bottom: 20px;
+}
+
+.calendar ul li {
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.days li.inactive {
+    color: #aaaaaa;
+}
+
+.days li.active {
+    color: #ffffff;
+}
+
+.calendar .days li::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.days li:hover::before {
+    background: #ffffff;
+}
+
+.days li.active::before {
+    background: rgb(112, 20, 46);
+}
+
+
+/* To Do List */
+
+.list-element {
+    background-color: rgb(222, 213, 203);
+    border-radius: 12px;
+    display: flex;
+    margin-bottom: 2%;
+    position: relative;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+}
+
+.box input {
+    margin-top: 10%;
+    width: 10%;
+}
+
+input[type = "checkbox"] {
+    -webkit-apparence:none;
+    appearance: none;
+}
+
+input[type="checkbox"]::before{
+    content:"";
+    width: 20px;
+    height: 20px;
+    background-color: rgb(222, 213, 203);
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 3%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 2px rgb(112, 20, 46);
+}
+
+input[type="checkbox"]::after{
+    content:"";
+    width: 12px;
+    height: 12px;
+    background-color: rgb(112, 20, 46);
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 16px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::after{
+    transform: scale(1);
+}
+
+.box .info {
+    width: 55%;
+    padding: 4px;
+    cursor: default;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+select {
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    border: 0;
+    color: rgb(112, 20, 46);
+    line-height: 1;
+    border-radius: 0;
+    height: 28px;
+    cursor: pointer;
+}
+
+.box .info2 {
+    padding: 8px 0 8px 8px;
+    width: 25%;
+    font-weight: 500;
+    cursor: default;
+    text-align: right;
+}
+
+.trash {
+    border: none;
+    background-color: transparent;
+    width: 12%;
+    cursor: pointer;
+    color: rgb(112, 20, 46);
+}
+
+
+/* button to add form */
+
+.add-form {
+    color: rgb(112, 20, 46);
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.add-form svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*regole modale menu*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 20, 46, 0.8);
+    z-index: 2;
+}
+
+.modal-window {
+    min-width: 320px;
+    min-height: 320px;
+    max-width: 500px;
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 10px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s;
+    position: sticky;
+    ;
+}
+
+.modal-window * {
+    color: #ffffff;
+}
+
+.modal-button {
+    border: none;
+    color: #000000;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.modal-content * {
+    max-width: 100%;
+    font-size: 28px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.add-modal-form {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.modal-button svg {
+    width: 40px;
+    height: 40px;
+}
+
+.modal-hidden {
+    visibility: hidden;
+}
+
+.modal-hidden .modal-window {
+    transform: scale(0);
+}
+
+
+/* regole form */
+.form-fields {
+    max-width: 500px;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    background-color: rgb(112, 20, 46);
+    border-radius: 12px;
+    transition: transform 0.5s;
+    position: sticky;
+}
+
+.close-form {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 30px;
+    padding-right: 8px;
+    cursor: pointer;
+    position: absolute;
+    top: -35px;
+    right: 0px;
+}
+
+input {
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    padding: 8px;
+    width: 100%;
+}
+
+.first-field {
+    width: calc(70% - 8px);
+}
+
+.second-field {
+    width: 30%;
+}
+
+.hour {
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.form-button {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 30px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+.form-hidden {
+    visibility: hidden;
+}
+
+.form-hidden * {
+    transform: scale(0);
+}

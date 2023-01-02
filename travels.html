@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Travels</title>
+        <!--Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600&display=swap"
+            rel="stylesheet">
+        <!--Style-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <div class="container">
+        <!--Header-->
+        <header>
+            <div class="header">
+                <div class="header-title">
+                    <h1>Travels</h1>
+                    <button id="menu-button" class="header-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!--Calendar-->
+            <div class="container-wrapper">
+                <div class="wrapper">
+                    <div class="header-wrapper">
+                        <div class="header-wrapper-left">
+                            <p class="current-date">Set 2022</p>
+                            <div class="icons">
+                                <span id="prev" class="material-symbols-rounded">&lt;</span>
+                            </div>
+                            <div class="icons">
+                                <span id="next" class="material-symbols-rounded">&gt;</span>
+                            </div>
+                        </div>
+                        <p class="today">Today</p>
+                    </div>
+                    <div class="calendar">
+                        <ul class="weeks">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                        <ul class="days"></ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Modal Menu-->
+        <div id="modal" class="modal-overlay modal-hidden">
+            <div class="modal-window">
+                <button class="modal-button close-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </button>
+                <div class="modal-content">
+                    <ul>
+                        <li>
+                            <a href="index.html">TO DO</a>
+                        </li>
+                        <li>
+                            <a href="films.html">FILMS</a>
+                        </li>
+                        <li>
+                            <a href="books.html">BOOKS</a>
+                        </li>
+                        <li>
+                            <a href="travels.html">TRAVELS</a>
+                        </li>
+                        <li>
+                            <a href="foods.html">FOODS</a>
+                        </li>
+                        <li>
+                            <a href="gym.html">GYM</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Form-->
+        <div id="list-form" class="modal-overlay form-hidden">
+            <form id="form">
+                <button class="close-form">x</button>
+                <div class="form-fields">
+                    <input class="first-field" type="text" placeholder="es. Italy" id="nation-field" autofocus maxlength="30"
+                        required>
+                    <input class="second-field" type="text" placeholder="es. 31km" id="distance-field">
+                    <div class="city-field">
+                       <input type="text" placeholder="es. Rome" id="city-field">
+                    </div>
+                    <input type="text" placeholder="es. is the capital city" id="description-field">
+                </div>
+                <button class="form-button">+</button>
+            </form>
+        </div>
+        <main>
+            <!--List-->
+            <ul class="to-do-list travels-list">
+                
+            </ul>
+            <!-- + for form-->
+            <button class="add-form">
+                <i class="bi bi-plus-circle-fill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                </i>
+            </button>
+        </main>
+    </div>
+
+
+    <!--JavaScript-->
+    <script src="script.js"></script>
+    <script src="script-travels.js"></script>
+</body>
+</html>
